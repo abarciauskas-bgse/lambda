@@ -180,6 +180,9 @@ ADD https://api.github.com/repos/PDAL/PDAL/commits?sha=${PDAL_VERSION} \
 ENV \
     PACKAGE_PREFIX=${DESTDIR}/python
 
+RUN yum install epel-release -y
+RUN yum --enablerepo=epel install hdf5 -y
+
 RUN \
     git clone https://github.com/PDAL/PDAL.git --branch ${PDAL_VERSION} \
     && cd PDAL \
@@ -193,6 +196,7 @@ RUN \
         -DCMAKE_MAKE_PROGRAM=make \
         -DBUILD_PLUGIN_I3S=ON \
         -DBUILD_PLUGIN_E57=ON \
+        #-DBUILD_PLUGIN_HDF=ON \
         -DWITH_LASZIP=ON \
         -DWITH_ZSTD=ON \
         -DCMAKE_LIBRARY_PATH:FILEPATH="$DESTDIR/usr/lib" \

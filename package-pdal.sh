@@ -10,7 +10,7 @@ cp -r /build/usr/lib/* $DEPLOY_DIR/lib
 cp -r /build/usr/lib64/* $DEPLOY_DIR/lib
 cp -r /build/usr/bin $DEPLOY_DIR/bin
 cp /usr/lib64/libjpeg.so.62.0.0 $DEPLOY_DIR/lib/
-cp /usr/lib64/libxml2.so.2.9.1 $DEPLOY_DIR/lib/
+cp /usr/lib64/libxml2.so.2.9.1 $DEPLOY_DIR/lib/libxml2.so.2
 cp /usr/lib64/liblzma.so.5.2.2 $DEPLOY_DIR/lib/
 cp /usr/lib64/libtiff.so.5.2.0 $DEPLOY_DIR/lib/
 cp /usr/lib64/libpng.so.3.49.0 $DEPLOY_DIR/lib/
